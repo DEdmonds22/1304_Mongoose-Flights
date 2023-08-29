@@ -23,7 +23,7 @@ const New = () => {
         justifyContent: 'center',
     }
 
-    const formStyle ={
+    const formStyle = {
         backgroundColor: 'blue',
         padding: "10rem",
         fontSize: "2rem",
@@ -58,6 +58,15 @@ const New = () => {
                     < br />
                     Departs: <input type='datetime-local' name='departs' />
                     < br />
+                    <label for="airport">Destination: </label>
+                    <select name='airport'>
+                        <option value='AUS' >AUS</option>
+                        <option value='DAL' >DAL</option>
+                        <option value='LAX' >LAX</option>
+                        <option value='SAN' >SAN</option>
+                        <option value='SEA' >SEA</option>
+                    </select>
+                    <br />
                     <input type='submit' name='' value='Add your Flight!' style={submitStyle} />
                 </form>
             </div>

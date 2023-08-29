@@ -67,6 +67,15 @@ app.post('/flights', ( req, res ) => {
 
 
 // SHOW
+app.get('/flights/:id', (req, res) => {
+    const id = req.params.id;
+    Flight.findOne({_id: id})
+        .then(selectedFlight => {
+            console.log(selectedFlight)
+            res.render('Show', {flight: selectedFlight})
+        })
+})
+
 app.listen(3000, () => {
     console.log('listening');
 });

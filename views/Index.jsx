@@ -33,20 +33,32 @@ function Index({ flights }) {
         margin: "2rem"
     }
 
+    const liAStyle = {
+        backgroundColor: "darkBlue",
+        margin: "3em",
+        padding: "0.8rem",
+        color: "white",
+        textDecoration: "none",
+        fontSize: "0.8rem"
+    }
+
     return (
         <div style={divStyle}>
             <h1 style={h1Style}>All Flights</h1>
             <div style={divAStyle}>
-                <a href={`/flights/new`} style={aStyle}>Create a New Flight</a></div>
+                <a href={`/flights/new`} style={aStyle}>Create a New Flight</a>
+            </div>
             <ul>
                 { flights.map(( flight, i ) => {
                     return (
                         <li key={i} style={liStyle}>
                                 Airline: { flight.airline }
-                                < br/>
+                                <br/>
                                 Flight #: { flight.flightNo }
-                                < br/>
+                                <br/>
                                 Departs: {new Date(flight.departs).toLocaleString()}
+                                <br />
+                                <a href={`/flights/${flight._id}`} style={liAStyle}>DETAILS</a>
                         </li>
                     )
                 }) }
